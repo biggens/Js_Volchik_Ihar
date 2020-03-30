@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>lesson_2.1</title>
+</head>
+<body>
+  <script>
+      'use script';
+      var firstName = prompt('Ваше имя:', '');
+      var lastName = prompt('Ваша фамилия:', '');
+      var patronymic = prompt('Ваше отчество:', '');
+      var fullName = firstName + ' ' + lastName + ' ' + patronymic;
+      var age = prompt('Ваш возраст?', '');
+      if (/^[ 0-9]/) {
+          var errorAge = prompt ('Попробуй еще раз', '');
+      }
+      var gender = confirm('Ваш пол мужской?');
+      if (gender) {
+          gender = 'мужской'
+      } else {
+          gender = 'женский'
+      }
+      alert('Ваше ФИО:' + ' ' + fullName +
+          '\n' + 'Ваш возраст:' + ' ' + age +
+          '\n' + 'Ваш пол:' + ' ' + gender);
+  </script>
+</body>
+</html>
