@@ -9,23 +9,20 @@
       'use strict';
       var phrase = prompt('Введите любимую фразу', '');
 
-      function
-      counterLit() {
+      function counterLit() {
           var count = 0;
           var words = phrase.toLowerCase();
           var dictionary = ['а', 'у', 'о', 'ы', 'и', 'э', 'я', 'ю', 'ё', 'е'];
           for (var i = 0; i < words.length; i++) {
-              for (var j = 0; j < dictionary.length; j++) {
-                  if (words[i] === dictionary[j]) {
-                      count += 1;
-                      break;
-                  }
+              var C = words.charAt(i);
+              if (dictionary.indexOf(C) !== -1) {
+                  count++;
               }
           }
-          return count ? count : 'НОЛЬ';
+          return count;
       }
 
-      console.log('глассных букв: ' + counterLit());
+      console.log('глассных букв: ' + counterLit(phrase));
   </script>
 </body>
 </html>
