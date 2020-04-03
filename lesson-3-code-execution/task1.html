@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>task1</title>
+</head>
+<body>
+  <script>
+      'use script';
+      var tasksCompleted = {
+          'Anna': 29,
+          'Serg': 35,
+          'Elena': 1,
+          'Anton': 99
+      };
+      for (var key in tasksCompleted) {
+          console.log('Имя : ' + key + ',' + ' значение: ' + tasksCompleted[key])
+      }
+
+      function manyTasks(tasksCompleted) {
+          var sum = 0;
+          var big = "Нет сотрудников";
+          for (var key in tasksCompleted) {
+              if (tasksCompleted[key] > sum) {
+                  sum = tasksCompleted[key];
+                  big = key;
+              }
+          }
+          return big;
+      }
+
+      console.log('Самый работоспособный: ' + manyTasks(tasksCompleted));
+
+
+  </script>
+</body>
+</html>
