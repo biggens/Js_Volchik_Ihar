@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>task3</title>
+</head>
+<body>
+  <script>
+      'use script';
+      function sumNum() {
+          var sum = 0;
+          var boxNum = [];
+          do {
+              var numVisit = prompt('Введите значения', '');
+              if (typeof numVisit == 'number') {
+                  boxNum.push(numVisit);
+                  sum += boxNum;
+              }
+          } while ((numVisit !== "") || (numVisit == null));
+      return sum;
+      }
+      console.log(sumNum(boxNum));
+  </script>
+</body>
+</html>
