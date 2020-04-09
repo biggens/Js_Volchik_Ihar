@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>task1</title>
+</head>
+<body>
+  <script>
+      'use script';
+      var spc = " ";
+      var num = "#";
+      var line = +prompt("число линий", '');
+      var row = +prompt("число символов в строке включая ' ' ", '');
+      var newStr = "\n";
+      for (var i = 1; i <= line; i++) {
+          for (var n = 1; n <= row; n++) {
+              newStr += (i % 2 == n % 2) ? num : spc;
+          }
+          newStr += "\n";
+      }
+      console.log(newStr);
+  </script>
+</body>
+</html>
