@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>task2</title>
+</head>
+<body>
+  <script>
+      'use script';
+
+      function interviewQuestion(prof) {
+          var arr = {
+              designer: 'John can you please explain what UX design is?',
+              teacher: 'What subject do you teach John?',
+              other: 'Hello John, what do you do?'
+          };
+          for (var key in arr) {
+              if (key == prof) {
+
+                  return function (name) {
+                      console.log(arr[key]);
+                  }
+              }
+          }
+      }
+
+      interviewQuestion('designer')('John');
+  </script>
+</body>
+</html>
