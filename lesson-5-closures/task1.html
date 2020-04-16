@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>task1</title>
+</head>
+<body>
+  <script>
+      'use script';
+      var john = {
+          bills: [124, 48, 268, 180, 42],
+          tips: [],
+          fullBills: [],
+          calculateTips: function () {
+              for (var i = 0; i < this.bills.length; i++) {
+                  var payment = this.bills[i];
+                  if (payment < 50) {
+                      var percent = payment / 100 * 20;
+                  } else if (payment >= 50 && payment < 200) {
+                      percent = payment / 100 * 15;
+                  } else {
+                      percent = payment / 100 * 10;
+                  }
+                  this.tips.push(percent);
+                  var fullPay = this.bills[i] + percent;
+                  this.fullBills.push(fullPay);
+              }
+              return this.tips;
+          }
+      }
+      console.log('Чаевые Johna состовили в каждом ресторане: ' + (john.calculateTips().join(' / ')) + '\n' + 'окончательные счета равны: ' + (john.fullBills.join(' / ')));
+  </script>
+</body>
+</html>
