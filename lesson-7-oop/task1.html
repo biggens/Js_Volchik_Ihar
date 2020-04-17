@@ -6,8 +6,32 @@
 </head>
 <body>
   <script>
-    'use script';
-    
+      'use script';
+
+      function Question(mainQuest, a, b, c) {
+          this.a = a;
+          this.b = b;
+          this.c = c;
+          this.mainQuest = mainQuest;
+          this.getFavoriteColor = function () {
+              var answer = prompt(this.mainQuest + '\n' + 'Variants answers:' + '\n' + '1 - ' + this.a + '\n' + '2 - ' + this.b + '\n' + '3 - ' + this.c,'Write to number');
+              if (answer === '1') {
+                  console.log(this.a);
+              } else if (answer === '2') {
+                  console.log(this.b);
+              } else if (answer === '3') {
+                  console.log(this.c);
+              } else {
+                  console.log("try else.")
+              }
+          }
+      }
+
+      var oneQuestion = new Question('What are you favorite color ?', 'red', 'green', 'yellow');
+      oneQuestion.getFavoriteColor();
+      var twoQuestion = new Question('How are things?', 'normal', 'the best', 'badly');
+      twoQuestion.getFavoriteColor();
+
   </script>
 </body>
 </html>
