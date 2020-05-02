@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>task1</title>
+</head>
+<body>
+
+  <button id="add-drink">Добавить</button>
+  <button id="get-drink">Рецепт</button>
+  <button id="delete-drink">Удалить</button>
+  <button id="all-drink">Список рецептов</button>
+
+  <script>
+      'use script';
+
+      class THashStorage {
+          constructor() {
+              this.store = {};
+          }
+
+          add(key, value) {
+              this.store[key] = value;
+          }
+
+          getValue(key) {
+              return this.store[key];
+          }
+
+          deleteValue(key) {
+              if (!(key in this.store)) {
+                  return false
+              }
+              return delete this.store[key];
+          }
+
+          getKeys() {
+              return Object.keys(this.store);
+          }
+      }
+
+      var drinkStorage = new THashStorage();
+
+      var addButton = document.getElementById('add-drink');
+      addButton.onclick = function () {
+          var name = prompt('Введите название коктеля');
+          var isAlcohol = prompt('Напиток алкогольный?');
+          var recipesDrink = prompt('Как приготовить этот напиток?');
+          drinkStorage.add(name, {name, isAlcohol, recipesDrink});
+          console.log(drinkStorage.getValue(name));
+      };
+
+
+  </script>
+
+
+</body>
+</html>
