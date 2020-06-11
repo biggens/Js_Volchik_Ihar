@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>lesson_2.1</title>
+</head>
+<body>
+  <script>
+      'use script';
+      var firstName = prompt('Ваше имя:', '');
+      if (firstName == "", null, (isFinite(firstName))) {
+          do {
+              var errorName = prompt('Попробуйте еще раз', '');
+          } while ((errorName == "") || (errorName == null) || (isFinite(firstName)));
+      }
+      var lastName = prompt('Ваша фамилия:', '');
+      var patronymic = prompt('Ваше отчество:', '');
+      var fullName = firstName + ' ' + lastName + ' ' + patronymic;
+      var Age = prompt('Ваш возраст?', '');
+      if (Age !== (isFinite(Age))) {
+          do {
+              var errorAge = prompt('Попробуйте еще раз', '');
+              var Age2 = parseInt(errorAge);
+          } while (isNaN(Age2));
+      }
+      var gender = confirm('Ваш пол мужской?');
+      if (gender) {
+          gender = 'мужской'
+      } else {
+          gender = 'женский'
+      }
+      alert('Ваше ФИО:' + ' ' + fullName +
+          '\n' + 'Ваш возраст:' + ' ' + Age +
+          '\n' + 'Ваш пол:' + ' ' + gender);
+  </script>
+</body>
+</html>
